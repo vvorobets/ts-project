@@ -26,11 +26,11 @@ export default class Fighter implements IFighter {
     public getPower() {
       return this._power;
     }
-    public setDamage(damage) {
+    public setDamage(damage: number) {
       this._health -= damage;
       console.log(`Now the ${this.getName()}'s health is ${this.getHealth()}`);
     }
-    public hit(enemy, point) {
+    public hit(enemy: Fighter | ImprovedFighter, point: number) {
       enemy.setDamage(point * this._power);
     }
     public knockout() {
