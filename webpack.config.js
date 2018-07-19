@@ -31,5 +31,6 @@ module.exports = {
             title: 'Typescript Webpack Starter',
             template: '!!ejs-loader!src/views/index.html'
         })
-    ]
+    ],
+    mode: 'development'
 }
