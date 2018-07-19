@@ -2,12 +2,13 @@ import Fighter from './fighter';
 import ImprovedFighter from './improvedFighter';
 
 // create async function fight
-async function fight(fighter: Fighter, improvedFighter: ImprovedFighter, ...points: number[]): Promise<void> {
+async function fight(fighter: Fighter, improvedFighter: ImprovedFighter, ...points): Promise<void> {
+    let assertedPoints = <number[]>points;
     console.log(
       `To the left is: ${fighter.getName()}! And to the right is: ${improvedFighter.getName()}!`
     );
     let is1FighterTurn: boolean = true;
-    for (let point of points) {
+    for (let point of assertedPoints) {
       is1FighterTurn
         ? console.log(`The ${fighter.getName()}'s turn!`)
         : console.log(`The ${improvedFighter.getName()}'s turn!`);
