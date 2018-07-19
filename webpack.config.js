@@ -17,10 +17,10 @@ module.exports = {
         modules: [path.resolve('./src'), 'node_modules']
     },
     module: {
-        // loaders: [
-        //     { test: /\.tsx?$/, loader: 'ts-loader' },
+        loaders: [
+             { test: /\.tsx?$/, loader: 'ts-loader' },
         //     { test: /\.html$/, loader: "html" },
-        // ]
+        ]
     },
     devServer: {
         inline:true,

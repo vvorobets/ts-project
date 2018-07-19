@@ -1,9 +1,6 @@
 import ImprovedFighter from "./improvedFighter";
 
 export interface IFighter {
-    _name: string;
-    _health: number;
-    _power: number;
     getName: () => string;
     getHealth: () => number;
     getPower: () => number;
@@ -14,33 +11,31 @@ export interface IFighter {
 
 // Create class Fighter
 export default class Fighter implements IFighter {
-    _name: string;
-    _health: number;
-    _power: number;
+    protected _name: string;
+    protected _health: number;
+    protected _power: number;
     constructor(name = "padawan", health = 100, power = 10) {
       (this._name = name), (this._health = health), (this._power = power);
     }
-    getName() {
+    public getName() {
       return this._name;
     }
-    getHealth() {
+    public getHealth() {
       return this._health;
     }
-    getPower() {
+    public getPower() {
       return this._power;
     }
-    setDamage(damage) {
+    public setDamage(damage) {
       this._health -= damage;
       console.log(`Now the ${this.getName()}'s health is ${this.getHealth()}`);
     }
-    hit(enemy, point) {
+    public hit(enemy, point) {
       enemy.setDamage(point * this._power);
     }
-    knockout() {
+    public knockout() {
       return new Promise<void>(resolve => setTimeout(resolve, 500)).then(() =>
         console.log("time is over")
       );
-      let Promise: PromiseConstructor
-new <void>(executor: (resolve: (value?: void | PromiseLike<void>) => void) => void) => Promise<void>
     }
 }
